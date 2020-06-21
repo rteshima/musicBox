@@ -1,0 +1,14 @@
+
+.recorder-row {
+    background-color: lightgrey;
+    height: 90px;
+}
+
+.Recording {
+    height: 50px;
+    width: 50px;
+}
+.NotRecording {
+    height: 50px;
+    width: 50px;
+}

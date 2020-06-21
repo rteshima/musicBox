@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import {storage} from "./firebase/firebase";
+import React from 'react';
+import logo from './logo.svg';
+import './styles/App.css';
 
 function UploadForm() {
   const allInputs = {audioUrl: ''}

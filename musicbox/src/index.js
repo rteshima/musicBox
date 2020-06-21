@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles/index.css';
 import App from './App';
 import TitleText from './TitleText';
+import Recorder from './Recorder';
 import * as serviceWorker from './serviceWorker';
 import MediaPool from './MediaPool';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,6 +14,7 @@ ReactDOM.render(
     {/* <App /> */}
     <TitleText />
     <MediaPool />
+    <Recorder name="Ryan" live={true}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -2,11 +2,11 @@
 import React, { Component } from "react";
 import storage from "../Firebase/index";
 
-class ImageUpload extends Component {
+class AudioUpload extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: null,
+      audio: null,
       url: "",
       progress: 0
     };
@@ -14,14 +14,14 @@ class ImageUpload extends Component {
 
   handleChange = e => {
     if (e.target.files[0]) {
-      const image = e.target.files[0];
-      this.setState(() => ({ image }));
+      const audio = e.target.files[0];
+      this.setState(() => ({ audio }));
     }
   };
 
   handleUpload = () => {
-    const { image } = this.state;
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const { audio } = this.state;
+    const uploadTask = storage.ref(`audio/${audio.name}`).put(audio);
     uploadTask.on(
       "state_changed",
       snapshot => {
@@ -38,8 +38,8 @@ class ImageUpload extends Component {
       () => {
         // complete function ...
         storage
-          .ref("images")
-          .child(image.name)
+          .ref("audio")
+          .child(audio.name)
           .getDownloadURL()
           .then(url => {
             this.setState({ url });
@@ -51,7 +51,7 @@ class ImageUpload extends Component {
     return (
       <div className="center">
           <br/>
-          <h2 className="green-text">React Firebase Image Uploader</h2>
+          <h2 className="green-text">React Firebase audio Uploader</h2>
           <br/>
           <br/>
         <div className="row">
@@ -79,7 +79,7 @@ class ImageUpload extends Component {
         <br />
         <img
           src={this.state.url || "https://via.placeholder.com/400x300"}
-          alt="Uploaded Images"
+          alt="Uploaded Audio"
           height="300"
           width="400"
         />
@@ -88,4 +88,4 @@ class ImageUpload extends Component {
   }
 }
 
-export default ImageUpload;
+export default AudioUpload;
