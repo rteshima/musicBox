@@ -6,26 +6,35 @@ import './styles/Recorder.css';
 import redLight from './images/red.png';
 import grayLight from './images/gray.png';
 
-// class RecorderButton extends React.Component() {
-//     constructor(props) {
-//         super(props);
-//     }
+class RecorderButton extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
 
 
-//     createRecorder() {
-//         return <Recorder name="Ryan" live={true} />;
-//     }
+    handleClick() {
+        return <CreateRecorder name="ryan"/>;
+    }
 
-//     render() {
-//         return (
-//             <button onClick={this.createRecorder}>connect device</button>
-//         );
-//     }
-// }
+    render() {
+        return (
+            <button onClick={this.handleClick}>connect device</button>
+        );
+    }
+}
+
+function CreateRecorder(props) {
+    return (
+        <Recorder name={props.name} live={true} />
+    );
+}
 
 function Recorder(props) {
     return (
         <div className="Recorder">
+            <RecorderButton />
             <Container>
                 <Row className="show-grid recorder-row">
                     <Col sm={2} className="recorder-col">
