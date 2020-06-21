@@ -1,27 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {storage} from "./firebase/firebase";
 
-function App() {
+function UploadForm() {
+  const allInputs = {audioUrl: ''}
+  const [audioAsFile, setAudioAsFile] = useState('');
+  const [audioAsUrl, setAudioAsUrl] = useState(allInputs);
+
+  console.log(audioAsFile)
+  const handleAudioAsFile = (e) => {
+  const audio = e.target.files [0]
+  setAudioAsFile (audioFile => (audio))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <div className="App">
+    <form>
+      <input type="file" onChange={handleAudioAsFile}></input>
+    </form>
+  </div>
+);
 }
 
 
-export default App;
+
+export default UploadForm;
