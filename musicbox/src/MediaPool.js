@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
-import {storage} from "./firebase/firebase";
+import { storage } from "./firebase/firebase";
 
 
 // // function UploadForm() {
@@ -122,40 +122,28 @@ class AudioUpload extends Component {
   };
   render() {
     return (
-      <div className="center">
-          <br/>
-          <h2 className="green-text">React Firebase Audio Uploader</h2>
-          <br/>
-          <br/>
-        <div className="row">
-          <progress value={this.state.progress} max="100" className="progress" />
-        </div>
-        <br />
-        <br />
-        <br />
-        <div className="file-field input-field">
-          <div className="btn">
-            <span>File</span>
-            <input type="file" onChange={this.handleChange} />
-          </div>
-          <div className="file-path-wrapper">
-            <input className="file-path validate" type="text" />
-          </div>
-        </div>
-        <button
-          onClick={this.handleUpload}
-          className="waves-effect waves-light btn"
-        >
-          Upload
-        </button>
-        <br />
-        <br />
-        <img
-          src={this.state.url || "https://via.placeholder.com/400x300"}
-          alt="Uploaded Audio"
-          height="300"
-          width="400"
-        />
+      <div className="MediaPool">
+        <Container>
+          <div className="center">
+            <br />
+            <h2 className="green-text">musicBox Media Pool</h2>
+            <br />
+            <br />
+            <div className="row">
+              <progress value={this.state.progress} max="100" className="progress" />
+            </div>
+            <br>
+            </br>
+            <div className="file-field input-field">
+              <div className="btn">
+                <span>File</span>
+                <input type="file" onChange={this.handleChange} />
+              </div>
+            </div>
+            <br />
+            <br />
+          </div >
+        </Container>
       </div>
     );
   }
