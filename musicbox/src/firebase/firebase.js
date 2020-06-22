@@ -1,13 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/storage'
 
-
-<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
-
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
-
-  // Your web app's Firebase configuration
+// Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyAPEHigBAlUi8kkPkiY_He2jIdOMM4XAOk",
     authDomain: "musicbox-c9dc9.firebaseapp.com",
@@ -21,7 +15,7 @@ import 'firebase/storage'
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const storage = firebase.storage()
-  firebase.analytics();
+  //firebase.analytics();
 
 export {
     storage, firebase as default
