@@ -139,7 +139,16 @@ class AudioUpload extends Component {
                 <span>File</span>
                 <input type="file" onChange={this.handleChange} />
               </div>
+              <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+              </div>
             </div>
+            <button
+              onClick={this.handleUpload}
+              className="waves-effect waves-light btn"
+            >
+              Upload
+        </button>
             <br />
             <br />
           </div >
